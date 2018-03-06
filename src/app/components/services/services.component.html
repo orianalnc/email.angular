@@ -1,0 +1,97 @@
+<!-- banner -->
+<div class="banner_ocls page_head"></div>
+<!-- //banner -->
+<div class="about all_pad animated fadeIn"  >
+  <div class="container">
+    <h3 class="title">Services<div class="linea"></div></h3>
+    <div class="services-grids oclayouts">
+      <div class="row">
+        <div class="col col-md-4 col-lg-4 col-sm-12  oc_flex">
+          <div class="col-sm-4  fea_left text-center ocls">
+            <div class="ih-item circle effect1">
+              <a href="" routerLink="/prescription">
+                <div class="spinner"></div>
+                <div class="img"><img src="../../../assets/images/icon1.png" alt="img"></div>
+                <div class="info">
+                  <div class="info-back">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-8 fea_right fea_two agileinfo">
+            <h4>New Prescriptions</h4>
+            <p> </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col col-md-4 col-lg-4 col-sm-12  oc_flex">
+          <div class="col-sm-4 fea_left fea_one text-center oclayouts">
+            <div class="ih-item circle effect1">
+              <a href="javascript:void(0)" routerLink="/refill">
+                <div class="spinner"></div>
+                <div class="img"><img  class="responsive-img" src="../../../assets/images/icon13.png" alt="img"></div>
+                <div class="info">
+                  <div class="info-back">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-8 fea_right fea_two oc-agileits">
+            <h4>Refill Prescriptions</h4>
+            <p></p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col col-md-4 col-lg-4 col-sm-12  oc_flex">
+          <div class="col-sm-4 fea_left text-center ocls">
+            <div class="ih-item circle effect1">
+              <a href="javascript:void(0)" routerLink="/transfer">
+                <div class="spinner"></div>
+                <div class="img"><img src="../../../assets/images/icon12.png" alt="img"></div>
+                <div class="info">
+                  <div class="info-back">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-8 fea_right fea_two agileinfo">
+            <h4>Transfer Prescriptions</h4>
+            <p> </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="row space-service">
+      <div class="about-bottom">
+        <div class="col-md-4 wow fadeInDown" *ngFor="let service of _is.services">
+          <a href="javascript:void(0);">
+            <img class="img-responsive" [src]="service.url" alt="" /></a>
+          <h4 class="space">
+            <a href="javascript:void(0);"> {{ service.name }} </a>
+          </h4>
+          <div>
+            <p>{{ service.description }} </p>
+            <ul class="space-left" style="list-style:  none;">
+              <li class="space-left">{{ service.li1 }}</li>
+              <li class="space-left">{{ service.li2 }} </li>
+              <li class="space-left">{{ service.li3 }}</li>
+              <li class="space-left">{{ service.li4 }}</li>
+              <li class="space-left"> {{ service.li5 }}</li>
+              <li class="space-left"> {{ service.li6 }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="container padding space text-center">
+          <h4>For ease and peace of mind we accept insurance as well as other payment methods for all medicine and medical services offered. </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

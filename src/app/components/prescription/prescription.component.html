@@ -1,0 +1,124 @@
+<!-- banner -->
+<div class="banner_ocls page_head">
+
+</div>
+<!-- //banner -->
+<div class="about all_pad animated fadeIn"  >
+  <div class="container">
+    <h3 class="title">New Prescriptions <div class="linea"></div></h3>
+    <div class="services-grids oclayouts">
+      <div class="col-md-12">
+        <p class="">
+          We know our customers have busy lives and are committed to getting you your new prescriptions on time. Efficiency is our guarantee; ask about our medication delivery service to either your home or business.
+
+
+        </p>
+
+        <p class="space">
+          To request a new prescription, simply complete the form below and we will call you back as soon as possible during business hours. If you have questions or want to fill out a request over the phone, do not hesitate to call during our hours of operation at 1-718-661-0872.
+
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+
+          <form  (submit)="sendEmail(message)">
+            <div class="formulario">
+              <div class="form">
+                <label for="first_name"> First name</label>
+                <input class="input" type="text" id="first_name"  name="first_name" [(ngModel)]="message.first_name" >
+              </div>
+
+              <div class="form">
+                <label for="last_name">Last name</label>
+                <input class="input" type="text" id="last_name"  name="last_name"  [(ngModel)]="message.last_name">
+              </div>
+
+              <div class="form">
+                <label for="email">E-mail</label>
+                <input type="text" class="input" id="email" name="email"   [(ngModel)]="message.email">
+              </div>
+
+              <div class="form">
+                <label for="phone">Phone</label>
+                <input type="text" class="input" id="phone" name="phone"  [(ngModel)]="message.phone">
+              </div>
+              <div class="form">
+                <label for="dr_name">Dr. Name</label>
+                <input type="text" class="input" id="dr_name" name="dr_name"  [(ngModel)]="message.dr_name">
+              </div>
+              <div class="form">
+                <label for="dr_phone">Dr. Phone</label>
+                <input type="text" class="input" id="dr_phone" name="dr_phone"  [(ngModel)]="message.dr_phone" >
+              </div>
+              <div class="form">
+                <label for="medication">Medication</label>
+                <input type="text" class="input" id="medication" name="medication"  [(ngModel)]="message.medication" >
+              </div>
+              <div class="form ">
+                <label for="message">Message</label>
+                <textarea class="input" id="message" name="message"  [(ngModel)]="message.menssge" ></textarea>
+
+              </div>
+              <div class="g-recaptcha" data-sitekey="6LdENUgUAAAAAIKcq1XfmdF2_MTPbqKeqkxCfvo6"></div>
+              <div class="form">
+                <div class=" text-center ">
+                  <!-- <button class="btn-submit"> Send</button> -->
+                  <input type="submit" value="Submit" class="btn-submit" id="submit" name="submit">
+
+                </div>
+              </div>
+
+            </div>
+          </form>
+
+
+        </div>
+        <div class="col-md-4 space">
+          <h3 class="title" style="text-align:center">Contact Us <div class="linea"></div><span></span> </h3>
+          <div class=" agileits-oclayouts">
+            <i class="glyphicon glyphicon-map-marker green" aria-hidden="true"></i>
+            <h4 class="green" style="display: inline;">Address<div class="line"></div></h4>
+            <h4>20-07 127th St #G33
+              College Point, NY 11356-2321</h4>
+          </div>
+
+          <div class=" space agileits-oclayouts">
+            <div><i class="glyphicon glyphicon-earphone green" aria-hidden="true"></i>
+              <h4 class="green" style="display: inline;">Call Us<div class="line"></div></h4>
+            </div>
+
+
+            <div><h4> 1-866-201-3831</h4>	</div>
+            <div><h4> 1-718-661-0872</h4> </div>
+
+
+          </div>
+          <div class="space">
+            <i class="glyphicon glyphicon-envelope green" aria-hidden="true"></i>
+            <h4 class="green" style="display: inline;">Email<div class="line"></div></h4>
+            <h4><a href="mailto:info@premier.com">info@premier.com</a>
+
+            </h4>
+          </div>
+          <div class="space">
+            <i class=" glyphicon glyphicon-time green" aria-hidden="true" ></i>
+            <h4 class="green" style="display: inline;">Hours of Operation<div class="line"></div></h4>
+            <div>
+              <h4>  Mon - Fri: 9-5 pm : Open  </h4>
+
+            </div>
+            <div>
+              <h4>Sat- Sun : Closed</h4>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
