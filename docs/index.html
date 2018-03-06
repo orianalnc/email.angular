@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Premier</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><meta name="keywords" content=""/><script type="application/x-javascript">addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+  function hideURLbar(){ window.scrollTo(0,1); }</script><!-- //for-mobile-apps --><link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"><link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/><link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/><link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all"><script src="assets/js/wow.min.js"></script><script>new WOW().init();</script><script src="https://www.google.com/recaptcha/api.js"></script><link href="assets/data/enviar.php"><!--
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgTGgoGqpXS9yrK1WK9zjAeVv-3SmJAq4&callback=initMap"></script>--><!--  &lt;!&ndash; Google Maps &ndash;&gt;
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+  &lt;!&ndash; AngularJS &ndash;&gt;
+  <script src="assets/js/angularjs.min.js?v=1.2.26"></script>
+
+
+  &lt;!&ndash; angular-goole-maps &ndash;&gt;
+  <script src="assets/js/lodash.underscore.min.js?v=2.4.1"></script>
+  <script src="assets/js/angular-google-maps.min.js?v=1.2.2"></script>
+
+  &lt;!&ndash; Custom angular module &ndash;&gt;
+  <script src="assets/js/map.js?v=1.0"></script>--><style>#map {
+      width: 100%;
+      height: 400px;
+      background-color: grey;
+    }</style><!-- js --><script src="assets/js/jquery-2.1.4.min.js"></script><!-- //js --><!-- start-smoth-scrolling --><script src="assets/js/move-top.js"></script><script src="assets/js/easing.js"></script><script type="text/javascript">jQuery(document).ready(function($) {
+          $(".scroll").click(function(event){
+              event.preventDefault();
+              $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+          });
+      });</script><!-- start-smoth-scrolling --><script src="assets/js/responsiveslides.min.js"></script><script type="text/javascript" src="assets/js/numscroller-1.0.js"></script><link href="styles.7054cdc489c9c60bfa1f.bundle.css" rel="stylesheet"/></head><body class="animated fadeIn" ng-controller="MapCtrl"><app-root></app-root><script>// You can also use "$(window).load(function() {"
+      $(function () {
+          // Slideshow 4
+          $("#slider3").responsiveSlides({
+              auto: true,
+              pager: true,
+              nav: true,
+              speed: 500,
+              namespace: "callbacks",
+              before: function () {
+                  $('.events').append("<li>before event fired.</li>");
+              },
+              after: function () {
+                  $('.events').append("<li>after event fired.</li>");
+              }
+          });
+      });</script><!-- smooth scrolling --><script type="text/javascript">$(document).ready(function() {
+
+          /*
+              var defaults = {
+              containerID: 'toTop', // fading element id
+              containerHoverID: 'toTopHover', // fading element hover id
+              scrollSpeed: 1200,
+              easingType: 'linear'
+              };
+          */
+          $().UItoTop({ easingType: 'easeOutQuart' });
+          /*angular.module('miAplicacionGoogleMaps', ['uiGmapgoogle-maps']);*/
+      });</script><a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a><!-- //smooth scrolling --><!-- <script src="assets/js/maps.js"></script>--><script type="text/javascript" src="assets/js/bootstrap-3.1.1.min.js"></script><script type="text/javascript" src="inline.7872f224ea30c379b158.bundle.js"></script><script type="text/javascript" src="polyfills.f20484b2fa4642e0dca8.bundle.js"></script><script type="text/javascript" src="main.e8febb3ac7c5e98129ae.bundle.js"></script></body></html>
