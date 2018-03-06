@@ -16,7 +16,7 @@ export class PrescriptionComponent implements OnInit {
       console.log('AppComponent Success', res);
     }, error => {
       console.log('AppComponent Error', error);
-    })
+    });
   }
 
   ngOnInit() {

@@ -16,9 +16,7 @@ if(empty($errors))
     $from_last = $request->last;
     $from_email = $request->email;
     $from_phone = $request->phone;
-    $from_drName = $request->drName;
-    $from_drPhone = $request->drPhone;
-    $from_medication = $request->medication;
+    $from_mrx = $request->rx;
     $message = $request->message;
 
 
@@ -29,13 +27,11 @@ if(empty($errors))
     $content = "<p><strong>First:</strong> $from_first</p>
                 <p><strong>Last:</strong> $from_last</p>
                 <p><strong>Phone:</strong> $from_phone</p>
-                <p><strong>DrName:</strong> $from_drName</p>
-                <p><strong>DrPhone:</strong> $from_drPhone</p> 
-                <p><strong>Medication:</strong> $from_medication</p>
+                <p><strong>RX:</strong> $from_rx</p>
                 <p>$message</p>";
 
     $website = 'Premier Pharmacy ';
-    $email_subject = "$website: Contact New Prescription $from_first ";
+    $email_subject = "$website: Contact Refill Prescription $from_first ";
 
     $email_body = '<html><body>';
     $email_body .= "$contact $content";

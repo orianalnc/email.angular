@@ -26,13 +26,13 @@
           <form  (submit)="sendEmail(message)">
             <div class="formulario">
               <div class="form">
-                <label for="first_name"> First name</label>
-                <input class="input" type="text" id="first_name"  name="first_name" [(ngModel)]="message.first_name" >
+                <label for="first"> First name</label>
+                <input class="input" type="text" id="first"  name="first" [(ngModel)]="message.first" >
               </div>
 
               <div class="form">
-                <label for="last_name">Last name</label>
-                <input class="input" type="text" id="last_name"  name="last_name"  [(ngModel)]="message.last_name">
+                <label for="last">Last name</label>
+                <input class="input" type="text" id="last"  name="last"  [(ngModel)]="message.last">
               </div>
 
               <div class="form">
@@ -45,12 +45,12 @@
                 <input type="text" class="input" id="phone" name="phone"  [(ngModel)]="message.phone">
               </div>
               <div class="form">
-                <label for="dr_name">Dr. Name</label>
-                <input type="text" class="input" id="dr_name" name="dr_name"  [(ngModel)]="message.dr_name">
+                <label for="drName">Dr. Name</label>
+                <input type="text" class="input" id="drName" name="drName"  [(ngModel)]="message.drName">
               </div>
               <div class="form">
-                <label for="dr_phone">Dr. Phone</label>
-                <input type="text" class="input" id="dr_phone" name="dr_phone"  [(ngModel)]="message.dr_phone" >
+                <label for="drPhone">Dr. Phone</label>
+                <input type="text" class="input" id="drPhone" name="drPhone"  [(ngModel)]="message.drPhone" >
               </div>
               <div class="form">
                 <label for="medication">Medication</label>
@@ -58,14 +58,14 @@
               </div>
               <div class="form ">
                 <label for="message">Message</label>
-                <textarea class="input" id="message" name="message"  [(ngModel)]="message.menssge" ></textarea>
+                <textarea class="input" id="message" name="message"  [(ngModel)]="message.message" ></textarea>
 
               </div>
               <div class="g-recaptcha" data-sitekey="6LdENUgUAAAAAIKcq1XfmdF2_MTPbqKeqkxCfvo6"></div>
               <div class="form">
                 <div class=" text-center ">
-                  <!-- <button class="btn-submit"> Send</button> -->
-                  <input type="submit" value="Submit" class="btn-submit" id="submit" name="submit">
+                   <button class="btn-submit"> Send</button>
+                  <!--<input type="submit" value="Submit" class="btn-submit" id="submit" name="submit">-->
 
                 </div>
               </div>
