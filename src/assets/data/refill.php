@@ -10,7 +10,7 @@ if(empty($errors))
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
 
-    $from_to = "info@qubitmarketing.com";
+
 
     $from_first = $request->first;
     $from_last = $request->last;
@@ -20,7 +20,7 @@ if(empty($errors))
     $message = $request->message;
 
 
-    $to_email = $from_to;
+    $to_email = "info@qubitmarketing.com";
 
     $contact = "<p><strong>Email:</strong> $from_email</p>";
 

@@ -21,31 +21,30 @@
           <form (submit)="refilEmail(refill)">
             <div class="formulario">
               <div class="form">
-                <label for="first"> First name</label>
-                <input class="input" type="text" id="first"  name="first" [(ngModel)]="refill.first">
-
+                <label for="first"> First name </label>
+                <input class="input" type="text" id="first"  name="first" [(ngModel)]="refill.first" required>
               </div>
 
               <div class="form">
                 <label for="last">Last name</label>
-                <input class="input" type="text" id="last"  name="last"  [(ngModel)]="refill.last">
+                <input class="input" type="text" id="last"  name="last"  [(ngModel)]="refill.last" required>
 
               </div>
 
               <div class="form">
                 <label for="email">E-mail</label>
-                <input type="text" class="input" id="email" name="email"  [(ngModel)]="refill.email">
+                <input type="email" class="input" id="email" name="email"  [(ngModel)]="refill.email" required>
 
               </div>
 
               <div class="form">
                 <label for="phone">Phone</label>
-                <input type="text" class="input" id="phone" name="phone"  [(ngModel)]="refill.phone">
+                <input type="text" class="input" id="phone" name="phone"  [(ngModel)]="refill.phone" required>
 
               </div>
               <div class="form">
                 <label for="RxNumber">RX Number/s</label>
-                <input type="text" class="input" id="RxNumber" name="RxNumber"  [(ngModel)]="refill.rx" >
+                <input type="text" class="input" id="RxNumber" name="RxNumber"  [(ngModel)]="refill.rx" required>
 
               </div>
 
@@ -57,7 +56,7 @@
               <div class="g-recaptcha" data-sitekey="6LdENUgUAAAAAIKcq1XfmdF2_MTPbqKeqkxCfvo6"></div>
               <div class="form">
                 <div class=" text-center ">
-                  <button class="btn-submit"> Send</button>
+                  <button class="btn-submit" > Send</button>
                   <!--<input type="submit" value="Submit" class="btn-submit" id="submit" name="submit">-->
 
                 </div>

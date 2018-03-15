@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-export interface IMessage {
+export interface RefillMessage {
     first?: string;
     last?: string;
     email?: string;
@@ -15,11 +15,11 @@ export interface IMessage {
 
 @Injectable()
 export class RefillService {
-    private emailUrl = '/assets/data/refill.php';
+    private emailUrl = '../assets/data/refill.php';
 
     constructor( private http: Http) { }
 
-    refilEmail(refill: IMessage): Observable<IMessage> | any {
+    refilEmail(refill: RefillMessage): Observable<RefillMessage> | any {
         return this.http.post(this.emailUrl, refill)
             .map(response => {
                 console.log('Sending email was successfull', response);

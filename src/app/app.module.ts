@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
 
 import { app_routing } from './app.routes';
 import { InformacionService } from './servives/informacion.service';
@@ -20,6 +23,8 @@ import { PrivacyComponent } from './components/privacy/privacy.component';
 import { RefillComponent } from './components/refill/refill.component';
 import { ServicesComponent } from './components/services/services.component';
 import { TransferComponent } from './components/transfer/transfer.component';
+import {RefillService} from './refill.service';
+import {TransferService} from './transfer.service';
 
 
 @NgModule({
@@ -42,6 +47,8 @@ import { TransferComponent } from './components/transfer/transfer.component';
       FormsModule,
       HttpModule,
       app_routing,
+      RouterModule,
+      HttpClientModule,
       AgmCoreModule.forRoot({
           apiKey: 'AIzaSyBwUYfy08D_pxNo1l-OV4t5fHWRzoyoVRs'
       })
@@ -49,6 +56,8 @@ import { TransferComponent } from './components/transfer/transfer.component';
   providers: [
       InformacionService,
       PrescriptionService,
+      RefillService,
+      TransferService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TransferService, IMessage } from '../../transfer.service';
+import { TransferService, TMessage } from './../../transfer.service';
+import {IMessage} from '../../prescription.service';
+
+
 
 @Component({
   selector: 'app-transfer',
@@ -7,18 +10,18 @@ import { TransferService, IMessage } from '../../transfer.service';
   styleUrls: ['./transfer.component.css']
 })
 export class TransferComponent implements OnInit {
-    transfer: IMessage = {};
+    transfer: TMessage = {};
 
   constructor(private transferService: TransferService) { }
 
-    transferEmail(refill: IMessage) {
-        this.transferService.transferEmail(refill).subscribe(res => {
+
+    transferEmail(message: TMessage) {
+        this.transferService.transferEmail(message).subscribe(res => {
             console.log('AppComponent Success', res);
         }, error => {
             console.log('AppComponent Error', error);
         });
     }
-
   ngOnInit() {
   }
 

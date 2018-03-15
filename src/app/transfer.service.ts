@@ -4,16 +4,14 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-export interface IMessage {
+export interface TMessage {
     first?: string;
     last?: string;
     email?: string;
     phone?: string;
-    pharmacyName?: string;
-    pharmacyPhone?: string;
-    rx?: string;
     drName?: string;
     drPhone?: string;
+    medication?: string;
     message?: string;
 }
 
@@ -23,8 +21,8 @@ export class TransferService {
 
     constructor( private http: Http) { }
 
-    transferEmail(refill: IMessage): Observable<IMessage> | any {
-        return this.http.post(this.emailUrl, refill)
+    transferEmail(transfer: TMessage): Observable<TMessage> | any {
+        return this.http.post(this.emailUrl, transfer)
             .map(response => {
                 console.log('Sending email was successfull', response);
                 return response;

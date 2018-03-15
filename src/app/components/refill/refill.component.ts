@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RefillService, IMessage } from './../../refill.service';
+import { RefillService, RefillMessage } from '../../refill.service';
 
 @Component({
     selector: 'app-refill',
@@ -7,11 +7,11 @@ import { RefillService, IMessage } from './../../refill.service';
     styleUrls: ['./refill.component.css']
 })
 export class RefillComponent implements OnInit {
-    refill: IMessage = {};
+    refill: RefillMessage = {};
 
     constructor(private refillService: RefillService) { }
 
-    refilEmail(refill: IMessage) {
+    refilEmail(refill: RefillMessage) {
         this.refillService.refilEmail(refill).subscribe(res => {
             console.log('AppComponent Success', res);
         }, error => {
