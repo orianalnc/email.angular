@@ -1,43 +1,53 @@
-
 <?php
-if(isset($_POST['email'])) {
 
-// Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-    $email_to = "info@qubitmarketing.com";
-    $email_subject = "Contacto desde el sitio web";
+header('Content-type: application/json');
 
-// Aquí se deberían validar los datos ingresados por el usuario
-    if(!isset($_POST['first_name']) ||
-        !isset($_POST['last_name']) ||
-        !isset($_POST['phone']) ||
-        !isset($_POST['email']) ||
-        !isset($_POST['dr_name']) ||
-        !isset($_POST['dr_phone']) ||
-        !isset($_POST['medication']) ||
-        !isset($_POST['message'])) {
+$errors = '';
 
-        echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-        echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-        die();
-    }
+if(empty($errors))
+{
 
-    $email_message = "Detalles del formulario de contacto:\n\n";
-    $email_message .= "First: " . $_POST['first_name'] . "\n";
-    $email_message .= "Last: " . $_POST['last_name'] . "\n";
-    $email_message .= "Phone: " . $_POST['phone'] . "\n";
-    $email_message .= "E-mail: " . $_POST['email'] . "\n";
-    $email_message .= "Dr Name: " . $_POST['dr_name'] . "\n";
-    $email_message .= "Dr Phone: " . $_POST['dr_phone'] . "\n";
-    $email_message .= "Medication: " . $_POST['medication'] . "\n";
-    $email_message .= "Menssage: " . $_POST['Menssage'] . "\n\n";
+    $postdata = file_get_contents("php://input");
+    $request = json_decode($postdata);
 
 
-// Ahora se envía el e-mail usando la función mail() de PHP
-    $headers = 'From: '.$email_from."\r\n".
-        'Reply-To: '.$email_from."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-    @mail($email_to, $email_subject, $email_message, $headers);
+    $from_name = $request->name;
+    $from_email = $request->email;
+    $from_phone = $request->phone;
+    $message = $request->message;
 
-    echo "¡El formulario se ha enviado con éxito!";
+
+    $to_email = "info@qubitmarketing.com";
+
+    $contact = "<p><strong>Email:</strong> $from_email</p>";
+
+    $content = "<p><strong>First:</strong> $from_name</p>
+                <p><strong>Phone:</strong> $from_phone</p>
+                <p>$message</p>";
+
+    $website = 'Premier Pharmacy ';
+    $email_subject = "$website: Contact New Prescription $from_name ";
+
+    $email_body = '<html><body>';
+    $email_body .= "$contact $content";
+    $email_body .= '</body></html>';
+
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $headers .= "From: $from_email\n";
+    $headers .= "Reply-To: $from_email";
+
+    mail($to_email,$email_subject,$email_body,$headers);
+
+    $response_array['status'] = 'success';
+    $response_array['from'] = $from_email;
+    echo json_encode($response_array);
+    echo json_encode($from_email);
+    header($response_array);
+    return $from_email;
+} else {
+    $response_array['status'] = 'error';
+    echo json_encode($response_array);
+    header('Location: /error.html');
 }
 ?>

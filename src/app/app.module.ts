@@ -25,6 +25,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import {RefillService} from './refill.service';
 import {TransferService} from './transfer.service';
+import {ContactService} from './contact.service';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import {TransferService} from './transfer.service';
       InformacionService,
       PrescriptionService,
       RefillService,
-      TransferService
+      TransferService,
+      ContactService
   ],
   bootstrap: [AppComponent]
 })

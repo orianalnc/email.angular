@@ -4,3 +4,7 @@
 agm-map {
     height: 500px;
 }
+
+textarea {
+    overflow: hidden !important;
+}

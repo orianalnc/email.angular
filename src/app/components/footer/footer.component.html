@@ -68,24 +68,24 @@
 
       <div class="contact-oc_footer ">
         <div class="banner-text ocl ">
-          <form action="mailto:info@qubitmarketing.com" method="post" class=" white" name="contac">
+          <form  (submit)="contactEmail(contacts)">
             <div class="row form">
               <div class=" col-md-3 form ">
                 <label for="Name"> Name</label>
-                <input type="text" id="Name"  name="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+                <input type="text" id="Name"  name="Name"  [(ngModel)]="contacts.name"  required="required">
               </div>
 
               <div class="  col-md-3 form ">
                 <label for="Email"> E-mail</label>
-                <input type="text" id="Email"  name="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}" >
+                <input type="text" id="Email"  name="Email"  [(ngModel)]="contacts.email"  required="required" >
               </div>
               <div class="form col-md-3">
                 <label for="Phone"> Phone Number</label>
-                <input type="text" id="Phone" name="Phone" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Phone';}" >
+                <input type="text" id="Phone" name="Phone"   [(ngModel)]="contacts.phone"  required="required">
               </div>
               <div class="form  col-md-3">
                 <label for="Message">Message</label>
-                <input name="Message" id="Message" type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required="">
+                <input name="Message" id="Message" type="text"  [(ngModel)]="contacts.message"  required="required">
               </div>
 
             </div>

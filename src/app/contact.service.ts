@@ -4,28 +4,21 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-export interface TMessage {
-    first?: string;
+export interface CMessage {
+    name?: string;
     last?: string;
     email?: string;
-    phone?: string;
-    pharmacyName?: string;
-    pharmacyPhone?: string;
-    rx?: string;
-    drName?: string;
-    drPhone?: string;
-    medication?: string;
     message?: string;
 }
 
 @Injectable()
-export class TransferService {
-    private emailUrl = '/assets/data/transfer.php';
+export class  ContactService  {
+    private emailUrl = '/assets/data/enviar.php';
 
     constructor( private http: Http) { }
 
-    transferEmail(transfer: TMessage): Observable<TMessage> | any {
-        return this.http.post(this.emailUrl, transfer)
+    contactEmail(contacts: CMessage): Observable<CMessage> | any {
+        return this.http.post(this.emailUrl, contacts)
             .map(response => {
                 console.log('Sending email was successfull', response);
                 return response;
@@ -37,3 +30,4 @@ export class TransferService {
     }
 
 }
+

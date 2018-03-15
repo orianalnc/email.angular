@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TransferService, TMessage } from './../../transfer.service';
-import {IMessage} from '../../prescription.service';
+
 
 
 
