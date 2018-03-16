@@ -6,8 +6,8 @@ import 'rxjs/add/operator/catch';
 
 export interface CMessage {
     name?: string;
-    last?: string;
     email?: string;
+    phone?: string;
     message?: string;
 }
 
