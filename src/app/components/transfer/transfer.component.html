@@ -21,56 +21,92 @@
       <div class="row">
         <div class="col-md-8">
 
-          <form (submit)="transferEmail(transfer)">
+          <form id="transfer" name="transfer" (submit)="transferEmail(transfer)">
             <div class="formulario">
               <div class="form">
                 <label for="First"> First name</label>
-                <input class="input" type="text" id="first"  name="first" [(ngModel)]="transfer.first" required>
+                <input class="input" type="text" id="first"  name="first" #first="ngModel" [(ngModel)]="transfer.first" required>
+                <div [hidden]="first.valid || first.pristine"
+                     class="alert alert-danger">
+                  First Name is required
+                </div>
               </div>
 
               <div class="form">
                 <label for="last">Last name</label>
-                <input class="input" type="text" id="last"  name="last" [(ngModel)]="transfer.last" required>
+                <input class="input" type="text" id="last"  name="last" #last="ngModel" [(ngModel)]="transfer.last" required>
+                <div [hidden]="last.valid || last.pristine"
+                     class="alert alert-danger">
+                  Last Name is required
+                </div>
               </div>
 
               <div class="form">
                 <label for="email">E-mail</label>
-                <input class="input" type="text" id="email"  name="email" [(ngModel)]="transfer.email" required>
+                <input class="input" type="text" id="email"  name="email" #email="ngModel" [(ngModel)]="transfer.email" required>
+                <div [hidden]="email.valid || email.pristine"
+                     class="alert alert-danger">
+                  Email is required
+                </div>
               </div>
 
               <div class="form">
                 <label for="phone">Phone</label>
-                <input class="input" type="text" id="phone"  name="phone" [(ngModel)]="transfer.phone" required>
+                <input class="input" type="text" id="phone"  name="phone" #phone="ngModel" [(ngModel)]="transfer.phone" required>
+                <div [hidden]="phone.valid || phone.pristine"
+                     class="alert alert-danger">
+                  Phone is required
+                </div>
               </div>
               <div class="form">
                 <label for="pharmacyName">Pharmacy Name</label>
-                <input class="input" type="text" id="pharmacyName"  name="pharmacyName" [(ngModel)]="transfer.pharmacyName" required>
+                <input class="input" type="text" id="pharmacyName"  name="pharmacyName" #pharmacyName="ngModel" [(ngModel)]="transfer.pharmacyName" required>
+                <div [hidden]="pharmacyName.valid || pharmacyName.pristine"
+                     class="alert alert-danger">
+                   Pharmacy Name is required
+                </div>
               </div>
               <div class="form">
                 <label for="pharmacyPhone">Pharmacy Phone</label>
-                <input class="input" type="text" id="pharmacyPhone"  name="pharmacyPhone" [(ngModel)]="transfer.pharmacyPhone" required>
-
+                <input class="input" type="text" id="pharmacyPhone"  name="pharmacyPhone" #pharmacyPhone="ngModel" [(ngModel)]="transfer.pharmacyPhone" required>
+                <div [hidden]="pharmacyPhone.valid || pharmacyPhone.pristine"
+                     class="alert alert-danger">
+                  Pharmacy Phone is required
+                </div>
               </div>
               <div class="form">
-                <label for="rx">RX Number/s</label>
-                <input class="input" type="text" id="rx"  name="rx" [(ngModel)]="transfer.rx" required>
+                <label for="rxNumber">RX Number/s</label>
+                <input class="input" type="text" id="rxNumber"  name="rxNumber" #rx="ngModel" [(ngModel)]="transfer.rx" required>
+                <div [hidden]="pharmacyName.valid || pharmacyName.pristine"
+                     class="alert alert-danger">
+                  Rx Numbers is required
+                </div>
               </div>
               <div class="form">
                 <label for="drName">Dr. Name</label>
-                <input class="input" type="text" id="drName"  name="drName" [(ngModel)]="transfer.drName" required>
+                <input class="input" type="text" id="drName"  name="drName" #drName="ngModel" [(ngModel)]="transfer.drName" required>
+                <div [hidden]="drName.valid || drName.pristine"
+                     class="alert alert-danger">
+                  Dr Name is required
+                </div>
               </div>
               <div class="form">
                 <label for="drPhone">Dr Phone</label>
-                <input class="input" type="text" id="drPhone"  name="drPhone" [(ngModel)]="transfer.drPhone" required>
+                <input class="input" type="text" id="drPhone"  name="drPhone" #drPhone="ngModel" [(ngModel)]="transfer.drPhone" required>
+                <div [hidden]="drPhone.valid || drPhone.pristine"
+                     class="alert alert-danger">
+                  Dr Phone is required
+                </div>
               </div>
               <div class="form">
                 <label for="Message">Message</label>
-                <textarea class="input" id="Message" name="Message"  [(ngModel)]="transfer.message"></textarea>
+                <textarea class="input" id="message" name="message" #message="ngModel"  [(ngModel)]="transfer.message"></textarea>
+
               </div>
               <div class="g-recaptcha" data-sitekey="6LdENUgUAAAAAIKcq1XfmdF2_MTPbqKeqkxCfvo6"></div>
               <div class="form">
                 <div class=" text-center ">
-                  <button class="btn-submit"> Contact Our Pharmacist</button>
+                  <button class="btn-submit"  > Contact Our Pharmacist</button>
                   <!--<input type="submit" value="Submit" class="btn-submit" id="submit" name="submit">-->
 
 

@@ -1,5 +1,38 @@
 <?php
 
+
+
+
+
+
+$to = "info@qubitmarketing.com";
+
+$first = $_POST["first"];
+$last = $_POST["last"];
+$email = $_POST["email"];
+$phone = $_POST["phone"];
+$message = $_POST["message"];
+
+$content = "First Name: " . $first . "\nLast Name:" . $last . "\nE-mail: " .$email . "\nPhone: " . $phone . "\nMessage: " .$message;
+
+mail($to, "Contacto desde Contacts Form", $content);
+header("location: ../index.html");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 header('Content-type: application/json');
 
 $errors = '';
@@ -49,5 +82,5 @@ if(empty($errors))
     $response_array['status'] = 'error';
     echo json_encode($response_array);
     header('Location: /error.html');
-}
+}*/
 ?>

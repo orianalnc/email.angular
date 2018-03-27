@@ -22,4 +22,10 @@ export class PrescriptionComponent implements OnInit {
   ngOnInit() {
   }
 
+    submitted = false;
+
+    onSubmit() { this.submitted = true; }
+
+
+
 }

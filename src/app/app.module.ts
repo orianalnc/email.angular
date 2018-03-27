@@ -7,9 +7,15 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 
+
 import { app_routing } from './app.routes';
 import { InformacionService } from './servives/informacion.service';
 import { PrescriptionService } from './prescription.service';
+import { TransferService } from './transfer.service';
+import { ContactService } from './contact.service';
+import { RefillService } from './refill.service';
+import { HeaderService } from './header.service';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -23,9 +29,8 @@ import { PrivacyComponent } from './components/privacy/privacy.component';
 import { RefillComponent } from './components/refill/refill.component';
 import { ServicesComponent } from './components/services/services.component';
 import { TransferComponent } from './components/transfer/transfer.component';
-import {RefillService} from './refill.service';
-import {TransferService} from './transfer.service';
-import {ContactService} from './contact.service';
+
+
 
 
 @NgModule({
@@ -59,7 +64,8 @@ import {ContactService} from './contact.service';
       PrescriptionService,
       RefillService,
       TransferService,
-      ContactService
+      ContactService,
+      HeaderService
   ],
   bootstrap: [AppComponent]
 })

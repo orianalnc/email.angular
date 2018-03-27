@@ -25,4 +25,8 @@ export class TransferComponent implements OnInit {
   ngOnInit() {
   }
 
+    submitted = false;
+
+    onSubmit() { this.submitted = true; }
+
 }

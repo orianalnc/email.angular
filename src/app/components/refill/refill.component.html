@@ -18,39 +18,60 @@
       <div class="row">
         <div class="col-md-8">
 
-          <form (submit)="refilEmail(refill)">
+          <form name="refill" id="refill"  (submit)="refilEmail(refill)">
             <div class="formulario">
               <div class="form">
                 <label for="first"> First name </label>
-                <input class="input" type="text" id="first"  name="first" [(ngModel)]="refill.first" required>
+                <input class="input" type="text" id="first"  name="first" #first="ngModel" [(ngModel)]="refill.first" required>
+                <div [hidden]="first.valid || first.pristine"
+                     class="alert alert-danger">
+                  First Name is required
+                </div>
               </div>
 
               <div class="form">
                 <label for="last">Last name</label>
-                <input class="input" type="text" id="last"  name="last"  [(ngModel)]="refill.last" required>
+                <input class="input" type="text" id="last"  name="last" #last="ngModel"  [(ngModel)]="refill.last" required>
+                <div [hidden]="last.valid || last.pristine"
+                     class="alert alert-danger">
+                  Last Name is required
+                </div>
 
               </div>
 
               <div class="form">
                 <label for="email">E-mail</label>
-                <input type="email" class="input" id="email" name="email"  [(ngModel)]="refill.email" required>
+                <input type="email" class="input" id="email" name="email" #email="ngModel"  [(ngModel)]="refill.email" required>
+                <div [hidden]="email.valid || email.pristine"
+                     class="alert alert-danger">
+                  Email  is required
+                </div>
 
               </div>
 
               <div class="form">
                 <label for="phone">Phone</label>
-                <input type="text" class="input" id="phone" name="phone"  [(ngModel)]="refill.phone" required>
+                <input type="text" class="input" id="phone" name="phone" #phone="ngModel"  [(ngModel)]="refill.phone" required>
+                <div [hidden]="phone.valid || phone.pristine"
+                     class="alert alert-danger">
+                  Phone is required
+                </div>
 
               </div>
               <div class="form">
                 <label for="RxNumber">RX Number/s</label>
-                <input type="text" class="input" id="RxNumber" name="RxNumber"  [(ngModel)]="refill.rx" required>
+                <input type="text" class="input" id="rxNumber" name="rxNumber" #rx="ngModel"  [(ngModel)]="refill.rx" required>
+                <div [hidden]="rx.valid || rx.pristine"
+                     class="alert alert-danger">
+                  Rx Numbers is required
+                </div>
 
               </div>
 
               <div class="form ">
                 <label for="Message">Message</label>
-                <textarea class="input" id="Message" name="Message"  [(ngModel)]="refill.message"></textarea>
+                <textarea class="input" id="message" name="message" #message="ngModel"  [(ngModel)]="refill.message"></textarea>
+
 
               </div>
               <div class="g-recaptcha" data-sitekey="6LdENUgUAAAAAIKcq1XfmdF2_MTPbqKeqkxCfvo6"></div>

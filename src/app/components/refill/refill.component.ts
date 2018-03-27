@@ -22,4 +22,7 @@ export class RefillComponent implements OnInit {
     ngOnInit() {
     }
 
+    submitted = false;
+
+    onSubmit() { this.submitted = true; }
 }

@@ -30,23 +30,36 @@
     <div class="contact-oc mx-aut  oc-flex">
       <div class="banner-text ocl">
         <h3 class="white text-center">Contact Our Pharmacist</h3>
-        <form action="mailto:info@qubitmarketing.com" method="post" class="space" name="pharmacist">
+        <form method="post" class="space" name="pharmacist" id="pharmacist" (submit)="headerEmail(header)">
           <div class="form">
             <div class="mar-form">
-              <label for="Name"> Name</label>
-              <input class="input" type="text" id="Name"  name="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+              <label for="name"> Name</label>
+              <input class="input" type="text" id="name"  name="name" #name="ngModel" onfocus="this.value='';" [(ngModel)]="header.name"  required  >
+              <div [hidden]="name.valid || name.pristine"
+                   class="alert alert-danger">
+                Name is required
+              </div>
             </div>
             <div class="mar-form">
-              <label for="Email"> E-mail</label>
-              <input class="input" type="text" id="Email"  name="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+              <label for="email"> E-mail</label>
+              <input class="input" type="text" id="email"  name="email" #email="ngModel" onfocus="this.value='';" [(ngModel)]="header.email"  required  >
+              <div [hidden]="email.valid || email.pristine"
+                   class="alert alert-danger">
+                Email is required
+              </div>
             </div>
             <div class="mar-form">
               <label for="Phone"> Phone Number</label>
-              <input class="input" type="text" id="Phone"  name="Phone" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Phone';}">
+              <input class="input" type="text" id="phone"  name="phone" #phone="ngModel" onfocus="this.value='';" [(ngModel)]="header.phone"  required  >
+              <div [hidden]="phone.valid || phone.pristine"
+                   class="alert alert-danger">
+                Phone is required
+              </div>
             </div>
             <div class="mar-form">
               <label for="Message">Message</label>
-              <textarea class="input" id="Message" name="Message" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Message';}"></textarea>
+              <textarea class="input" id="message" name="message" #message="ngModel" onfocus="this.value='';" [(ngModel)]="header.message"  required  ></textarea>
+
             </div>
             <div class="mar-form">
               <div class=" text-center ">

@@ -23,48 +23,79 @@
       <div class="row">
         <div class="col-md-8">
 
-          <form  (submit)="sendEmail(message)">
+          <form name="prescription" id="prescription" (submit)="sendEmail(message)" >
+
+
             <div class="formulario">
-              <div class="form">
+              <div class="form "  >
                 <label for="first"> First name</label>
-                <input class="input" type="text" id="first"  name="first" [(ngModel)]="message.first"  required>
+                <input class="input form-control" type="text" id="first"  name="first"  #first="ngModel" [(ngModel)]="message.first"  required>
+                <div [hidden]="first.valid || first.pristine"
+                     class="alert alert-danger">
+                  First Name is required
+                </div>
               </div>
 
               <div class="form">
                 <label for="last">Last name</label>
-                <input class="input" type="text" id="last"  name="last"  [(ngModel)]="message.last" required>
+                <input class="input form-control" type="text" id="last"  name="last" #last="ngModel"   [(ngModel)]="message.last" required>
+                <div [hidden]="last.valid || last.pristine"
+                     class="alert alert-danger">
+                  Last Name is required
+                </div>
               </div>
 
               <div class="form">
                 <label for="email">E-mail</label>
-                <input type="text" class="input" id="email" name="email"   [(ngModel)]="message.email" required>
+                <input type="email" class="input  form-control" id="email" name="email" #email="ngModel"    [(ngModel)]="message.email" required>
+                <div [hidden]="email.valid || email.pristine"
+                     class="alert alert-danger">
+                  Email  is required
+                </div>
               </div>
 
               <div class="form">
                 <label for="phone">Phone</label>
-                <input type="text" class="input" id="phone" name="phone"  [(ngModel)]="message.phone" required>
+                <input type="text" class="input form-control" id="phone" name="phone" #phone="ngModel"   [(ngModel)]="message.phone" required>
+                <div [hidden]="phone.valid || phone.pristine"
+                     class="alert alert-danger">
+                  Phone is required
+                </div>
               </div>
               <div class="form">
                 <label for="drName">Dr. Name</label>
-                <input type="text" class="input" id="drName" name="drName"  [(ngModel)]="message.drName" required>
+                <input type="text" class="input form-control" id="drName" name="drName" #drName="ngModel"   [(ngModel)]="message.drName" required>
+                <div [hidden]="drName.valid || drName.pristine"
+                     class="alert alert-danger">
+                  Dr Name is required
+                </div>
               </div>
               <div class="form">
                 <label for="drPhone">Dr. Phone</label>
-                <input type="text" class="input" id="drPhone" name="drPhone"  [(ngModel)]="message.drPhone" required>
+                <input type="text" class="input form-control" id="drPhone" name="drPhone" #drPhone="ngModel"   [(ngModel)]="message.drPhone" required>
+                <div [hidden]="drPhone.valid || drPhone.pristine"
+                     class="alert alert-danger">
+                  Dr Phone is required
+                </div>
               </div>
               <div class="form">
                 <label for="medication">Medication</label>
-                <input type="text" class="input" id="medication" name="medication"  [(ngModel)]="message.medication" required>
+                <input type="text" class="input form-control" id="medication" name="medication" #medication="ngModel"   [(ngModel)]="message.medication" required>
+                <div [hidden]="medication.valid || medication.pristine"
+                     class="alert alert-danger">
+                  Medication is required
+                </div>
               </div>
               <div class="form ">
                 <label for="message">Message</label>
-                <textarea class="input" id="message" name="message"  [(ngModel)]="message.message" ></textarea>
+                <textarea class="input form-control" id="message" name="message" #message="ngModel"   [(ngModel)]="message.message" required ></textarea>
+
 
               </div>
               <div class="g-recaptcha" data-sitekey="6LdENUgUAAAAAIKcq1XfmdF2_MTPbqKeqkxCfvo6"></div>
               <div class="form">
                 <div class=" text-center ">
-                   <button class="btn-submit"> Contact Our Pharmacist</button>
+                   <button  class="btn-submit"  > Contact Our Pharmacist</button>
                   <!--<input type="submit" value="Submit" class="btn-submit" id="submit" name="submit">-->
 
                 </div>

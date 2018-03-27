@@ -68,24 +68,37 @@
 
       <div class="contact-oc_footer ">
         <div class="banner-text ocl ">
-          <form  (submit)="contactEmail(contacts)">
+          <form name="contacts" id="contacts"  (submit)="contactEmail(contacts)">
             <div class="row form">
               <div class=" col-md-3 form ">
                 <label for="name"> Name</label>
-                <input type="text" id="name"  name="name"  [(ngModel)]="contacts.name"  required="required">
+                <input type="text" id="name"  name="name" #name="ngModel"  [(ngModel)]="contacts.name"  required>
+                <div [hidden]="name.valid || name.pristine"
+                     class="alert alert-danger">
+                  Name is required
+                </div>
               </div>
 
               <div class="  col-md-3 form ">
                 <label for="email"> E-mail</label>
-                <input type="text" id="email"  name="email"  [(ngModel)]="contacts.email"  required="required" >
+                <input type="text" id="email"  name="email" #email="ngModel" [(ngModel)]="contacts.email"  required >
+                <div [hidden]="email.valid || email.pristine"
+                     class="alert alert-danger">
+                  Email is required
+                </div>
               </div>
               <div class="form col-md-3">
                 <label for="phone"> Phone Number</label>
-                <input type="text" id="phone" name="phone"   [(ngModel)]="contacts.phone"  required="required">
+                <input type="text" id="phone" name="phone" #phone="ngModel"   [(ngModel)]="contacts.phone"  required>
+                <div [hidden]="phone.valid || phone.pristine"
+                     class="alert alert-danger">
+                  Phone is required
+                </div>
               </div>
               <div class="form  col-md-3">
                 <label for="message">Message</label>
-                <input name="message" id="message" type="text"  [(ngModel)]="contacts.message"  required="required">
+                <input name="message" id="message" type="text" #message="ngModel"  [(ngModel)]="contacts.message"  required>
+
               </div>
 
             </div>
